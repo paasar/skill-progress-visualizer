@@ -25,7 +25,7 @@
                data (data-string->data data-string)
                subtree (entries-to-tree (inc depth) more)]]
      (if (seq subtree)
-       (into [data] subtree)
+       (conj [data] (vec subtree))
        [data []]))))
 
 (defn- skill-rows->tree [skill-rows]
