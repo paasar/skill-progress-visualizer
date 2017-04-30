@@ -5,4 +5,6 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.flatland/useful "0.11.5"]
                  [hiccup "1.0.5"]]
-  :main skill-tree-visualizer.core)
+  :main skill-tree-visualizer.core
+  :source-paths ["src" "resources"]
+  :auto {:default {:file-pattern #"\.(clj|css)$"}})
