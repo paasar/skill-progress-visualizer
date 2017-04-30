@@ -11,10 +11,10 @@
        rows))
 
 (defn- data-string->data [data-string]
-  (let [[sym name date] (split data-string #";")]
+  (let [[sym name active] (split data-string #";")]
     {:symbol sym
      :name name
-     :unlock-date date}))
+     :active active}))
 
 (defn- entries-to-tree
   ([entries]

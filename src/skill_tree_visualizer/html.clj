@@ -9,11 +9,11 @@
 
 (defn- create-branch [skill-branch]
   [:div.level
-   (for [[{:keys [symbol name unlock-date]} child-branches] skill-branch]
+   (for [[{:keys [symbol name active]} child-branches] skill-branch]
      [:div.skill
       [:div.symbol symbol]
       [:div.skill-name name]
-      [:div.unlock-date unlock-date]
+      [:div.active active]
       (create-branch child-branches)])])
 
 (defn- create-tree [{:keys [name skill-tree]}]
