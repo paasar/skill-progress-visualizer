@@ -1,7 +1,7 @@
 (ns skill-tree-visualizer.core
   (:require [clojure.string :refer [split split-lines trim]]
             [flatland.useful.seq :refer [partition-between]]
-            [skill-tree-visualizer.html :refer [render]])
+            [skill-tree-visualizer.html :refer [render-to-file]])
   (:gen-class))
 
 (defn- to-level-entries [rows]
@@ -53,7 +53,7 @@
   (-> (slurp "input.data")
       split-lines
       lines->data
-      (render "skillz.html"))
+      (render-to-file "skills.html"))
   (println "Done."))
 
 (defn -main []
