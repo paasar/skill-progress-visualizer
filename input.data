@@ -2,12 +2,14 @@ Cthulhu
 God
 
 Social
-  DC;Drive Crazy
+  DI;Drive Insane
 
 Motoric
   F;Float;27.4.2017
-    FF;Float Fast
+    T;Teleport
   C;Crawl
 
 Language
-  CF;Cthulhu Fhtang;16.4.2017
+  S;Swear;14.4.2017
+    C;Curse;15.4.2017
+      CF;Cthulhu Fhtang
