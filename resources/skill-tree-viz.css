@@ -1,0 +1,67 @@
+body {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAYAAACk7+45AAAAH0lEQVQYV2OUM9z//+mtDgZGOIOZ2/2/tFoFAyOMAQANUgzH6eQXdAAAAABJRU5ErkJggg);
+  color: white;
+}
+
+.name-and-class {
+  align: center;
+}
+
+.trees {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tree {
+/*
+  float: left;
+  margin: 5px;
+*/
+  min-width: 200px;
+}
+
+.tree .category {
+  font-size: 26px;
+  text-decoration: underline;
+}
+
+.sibling-skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+}
+
+.skill {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: flex-start;
+}
+
+.skill.inactive {
+  color: #888888;
+}
+
+
+.symbol, .skill-name, .active {
+/*  float: left;*/
+  margin-right: 3px;
+}
+
+.symbol {
+  border: solid 2px gold;
+  border-radius: 15px;
+  min-width: 18px;
+  padding: 3px;
+}
+
+.skill-name {
+  border-bottom: solid 1px gold;
+}
+
+.inactive .symbol, .inactive .skill-name {
+  border-color: #996633;
+}
