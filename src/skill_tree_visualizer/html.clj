@@ -1,9 +1,9 @@
 (ns skill-tree-visualizer.html
-  (:require [hiccup.core :refer :all]
-            [clojure.string :as s]))
+  (:require [hiccup.core :refer :all]))
 
 (defn- create-head [{name :name}]
   [:head
+    [:meta {:charset "UTF-8"}]
     [:title (str "Skill tree of " name)]
     [:style (slurp "resources/skill-tree-viz.css")]])
 
@@ -38,10 +38,3 @@
   (html [:html (create-head data)
                (create-body data)]))
 
-(defn- create-file-name [name suffix]
-  (str (-> name s/lower-case (s/replace #" " "_")) "_" suffix))
-
-(defn render-to-file [data output-file-suffix]
-  (->> data
-       render
-       (spit (create-file-name (:name data) output-file-suffix))))

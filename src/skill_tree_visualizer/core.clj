@@ -1,7 +1,7 @@
 (ns skill-tree-visualizer.core
-  (:require [clojure.string :refer [split split-lines trim]]
+  (:require [clojure.string :refer [lower-case split split-lines trim] :as s]
             [flatland.useful.seq :refer [partition-between]]
-            [skill-tree-visualizer.html :refer [render-to-file]])
+            [skill-tree-visualizer.html :refer [render]])
   (:gen-class))
 
 (defn- to-level-entries [rows]
@@ -48,12 +48,21 @@
    :class class
    :skill-trees (skill-rows->skill-trees skill-rows)})
 
+(defn- parse-input []
+  (-> (slurp "input.data" :encoding "UTF-8")
+      split-lines
+      lines->data))
+
+(defn- create-file-name [name suffix]
+  (str (-> name lower-case (s/replace #" " "_")) "_" suffix))
+
+(defn- write-to-file [content name]
+  (spit (create-file-name name "skills.html") content :encoding "UTF-8"))
+
 (defn generate-skill-tree-html []
   (println "Starting...")
-  (-> (slurp "input.data")
-      split-lines
-      lines->data
-      (render-to-file "skills.html"))
+  (let [data (parse-input)]
+    (write-to-file (render data) (:name data)))
   (println "Done."))
 
 (defn -main []
