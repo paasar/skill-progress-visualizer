@@ -30,21 +30,20 @@ body {
 .sibling-skills {
   display: flex;
   flex-direction: row;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   justify-content: space-around;
 }
 
 .skill {
   display: flex;
   flex-direction: row;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
 }
 
 .skill.inactive {
   color: #888888;
 }
-
 
 .symbol, .skill-name, .active {
 /*  float: left;*/
