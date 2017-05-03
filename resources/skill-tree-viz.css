@@ -15,10 +15,6 @@ body {
 }
 
 .tree {
-/*
-  float: left;
-  margin: 5px;
-*/
   min-width: 200px;
 }
 
@@ -31,10 +27,15 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .skill {
+  display: flex;
+  flex-direction: column;
+}
+
+.symbol-name-active {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -46,15 +47,17 @@ body {
 }
 
 .symbol, .skill-name, .active {
-/*  float: left;*/
   margin-right: 3px;
 }
 
 .symbol {
   border: solid 2px gold;
-  border-radius: 15px;
-  min-width: 18px;
+  border-radius: 23px;
+  min-width: 36px;
+  min-height: 36px;
+  line-height: 36px;
   padding: 3px;
+  text-align: center;
 }
 
 .skill-name {

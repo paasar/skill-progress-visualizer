@@ -11,10 +11,11 @@
   [:div.sibling-skills
    (for [[{:keys [symbol name active]} child-branches] skill-branch]
      [:div.skill (when-not active {:class "inactive"})
+      [:div.symbol-name-active
        [:div.symbol symbol]
        [:div.name-and-active
         [:div.skill-name name]
-        [:div.active active]]
+        [:div.active active]]]
       (create-branch child-branches)])])
 
 (defn- create-tree [{:keys [name skill-tree]}]
