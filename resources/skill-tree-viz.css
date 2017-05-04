@@ -25,6 +25,7 @@ body {
 .tree .category {
   font-size: 26px;
   text-decoration: underline;
+  margin-bottom: 10px;
 }
 
 .sibling-skills {
@@ -44,6 +45,11 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  margin: 0 10px 10px 0;
+}
+
+.active {
+  font-size: 12px;
 }
 
 .skill.inactive {
