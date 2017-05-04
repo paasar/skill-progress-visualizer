@@ -7,6 +7,10 @@ body {
   align: center;
 }
 
+.description {
+  margin-bottom: 20px;
+}
+
 .trees {
   display: flex;
   flex-direction: row;

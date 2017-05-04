@@ -13,6 +13,7 @@ The program reads `input.data` which is formatted as follows:
 ```
 Character name
 Character class
+Character description
 
 Section #1 name
   First skill

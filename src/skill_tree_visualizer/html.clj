@@ -29,10 +29,11 @@
    (for [tree trees]
      (create-tree tree))])
 
-(defn- create-body [{:keys [name class skill-trees]}]
+(defn- create-body [{:keys [name class description skill-trees]}]
   [:body
    [:div.content
     [:h1.name-and-class (str name ", " class)]
+    [:div.description description]
     (create-trees skill-trees)]])
 
 (defn render [data]

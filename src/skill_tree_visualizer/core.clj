@@ -43,8 +43,9 @@
        (remove #(= [""] %))
        (mapv #(into-tree %))))
 
-(defn- lines->data [[name class _ & skill-rows]]
+(defn- lines->data [[name class description _ & skill-rows]]
   {:name name
+   :description description
    :class class
    :skill-trees (skill-rows->skill-trees skill-rows)})
 
