@@ -34,7 +34,10 @@
 (defn- create-body [{:keys [name class description skill-trees]}]
   [:body
    [:div.content
-    [:h1.name-and-class (str name ", " class)]
+    [:h1.name-and-class
+     [:span.name name]
+     ", "
+     [:span.character-class class]]
     [:div.description description]
     (create-trees skill-trees)]])
 
