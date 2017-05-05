@@ -1,6 +1,10 @@
 body {
+/*
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAYAAACk7+45AAAAH0lEQVQYV2OUM9z//+mtDgZGOIOZ2/2/tFoFAyOMAQANUgzH6eQXdAAAAABJRU5ErkJggg);
+*/
+  background-color: darkblue;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .name-and-class {

@@ -5,6 +5,8 @@
   [:head
     [:meta {:charset "UTF-8"}]
     [:title (str "Skill tree of " name)]
+    [:link {:href "https://fonts.googleapis.com/css?family=Montserrat"
+            :rel "stylesheet"}]
     [:style (slurp "resources/skill-tree-viz.css")]])
 
 (defn- create-branch [skill-branch]
