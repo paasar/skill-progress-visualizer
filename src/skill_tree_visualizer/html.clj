@@ -3,11 +3,12 @@
 
 (defn- create-head [{name :name}]
   [:head
-    [:meta {:charset "UTF-8"}]
-    [:title (str "Skill tree of " name)]
-    [:link {:href "https://fonts.googleapis.com/css?family=Montserrat"
-            :rel "stylesheet"}]
-    [:style (slurp "resources/skill-tree-viz.css")]])
+   [:meta {:charset "UTF-8"}]
+   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+   [:title (str "Skill tree of " name)]
+   [:link {:href "https://fonts.googleapis.com/css?family=Montserrat"
+           :rel "stylesheet"}]
+   [:style (slurp "resources/skill-tree-viz.css")]])
 
 (defn- create-branch [skill-branch]
   [:div.sibling-skills
