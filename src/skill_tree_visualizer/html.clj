@@ -16,9 +16,10 @@
      [:div.skill (when-not active {:class "inactive"})
       [:div.symbol-name-active
        [:div.symbol symbol]
-       [:div.name-and-active
-        [:div.skill-name name]
-        [:div.active active]]]
+       [:div.skill-name name]
+       [:div.active
+        (when active "ACHIEVED")
+        [:div active]]]
       (create-branch child-branches)])])
 
 (defn- create-tree [{:keys [name skill-tree]}]
@@ -34,12 +35,11 @@
 
 (defn- create-body [{:keys [name class description skill-trees]}]
   [:body
+   [:div.header
+    [:div.name name]
+    [:div.character-class class]
+    [:div.description description]]
    [:div.content
-    [:h1.name-and-class
-     [:span.name name]
-     ", "
-     [:span.character-class class]]
-    [:div.description description]
     (create-trees skill-trees)]])
 
 (defn render [data]
