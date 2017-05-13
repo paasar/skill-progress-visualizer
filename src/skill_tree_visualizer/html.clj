@@ -15,9 +15,9 @@
    (for [[{:keys [symbol name active]} child-branches] skill-branch]
      [:div.skill (when-not active {:class "inactive"})
       [:div.symbol-name-active
-       [:div.symbol symbol]
        [:div.skill-name name]
-       [:div.active
+       [:div.symbol symbol]
+       [:div.active-text
         (when active "ACHIEVED")
         [:div active]]]
       (create-branch child-branches)])])
