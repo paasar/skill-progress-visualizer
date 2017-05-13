@@ -9,6 +9,7 @@
   --category-bg-color: var(--white);
   --category-text-color: rgb(182,182,182);
 
+  --symbol-text-color: var(--main-dark-color);
   --active-symbol-text-color: var(--white);
 }
 
@@ -80,11 +81,11 @@ body {
   flex-direction: column;
 }
 
-.skill-names, .actives {
+.skill-names, .activations {
   flex-grow: 4;
 }
 
-.skill-name, .symbol, .active {
+.skill-name, .symbol, .activation {
   display: flex;
   position: relative;
   flex-grow: 3;
@@ -99,8 +100,7 @@ body {
 .symbol {
   flex-grow: 1;
   justify-content: center;
-  background-color: var(--main-dark-color);
-  color: var(--active-symbol-text-color);
+  color: var(--symbol-text-color);
   border: solid 4px var(--main-dark-color);
   border-radius: 50%;
   min-width: 36px;
@@ -110,12 +110,13 @@ body {
   text-align: center;
 }
 
-.active {
+.symbol.active {
+  background-color: var(--main-dark-color);
+  color: var(--active-symbol-text-color);
+}
+
+.activation {
   font-size: 12px;
   justify-content: flex-start;
 }
 
-.inactive .symbol {
-  background-color: initial;
-  color: var(--main-dark-color);
-}

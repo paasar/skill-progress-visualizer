@@ -13,16 +13,19 @@
 (defn- create-skill-columns [skill-tree]
   (let [names (map :name skill-tree)
         symbols (map :symbol skill-tree)
-        actives (map :active skill-tree)]
+        activations (map :activation skill-tree)]
     [:div.skills
      [:div.column.skill-names
-      (map (fn [name] [:div.skill-name name]) names)]
+      (map (fn [[name active]]
+             [:div.skill-name {:class (when active "active")} name]) names)]
      [:div.column.symbols
-      (map (fn [symbol] [:div.symbol symbol]) symbols)]
-     [:div.column.actives
-      (map (fn [active] [:div.active
-                         (when active "ACHIEVED")
-                         [:div.active-text active]]) actives)]]))
+      (map (fn [[symbol active]]
+             [:div.symbol {:class (when active "active")} symbol]) symbols)]
+     [:div.column.activations
+      (map (fn [activation]
+             [:div.activation
+             (when activation "ACHIEVED")
+             [:div.activation-text activation]]) activations)]]))
 
 (defn- create-tree [{:keys [name skill-tree]}]
   [:div.tree

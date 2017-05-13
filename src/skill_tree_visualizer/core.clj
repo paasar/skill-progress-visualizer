@@ -5,10 +5,10 @@
   (:gen-class))
 
 (defn- data-string->data [data-string]
-  (let [[sym name active] (split data-string #";")]
-    {:symbol sym
-     :name name
-     :active active}))
+  (let [[sym name activation] (split data-string #";")]
+    {:symbol [sym activation]
+     :name [name activation]
+     :activation activation}))
 
 (defn- skill-rows->tree [skill-rows]
   (->> skill-rows
