@@ -4,34 +4,15 @@
             [skill-tree-visualizer.html :refer [render]])
   (:gen-class))
 
-(defn- to-level-entries [rows]
-  (map (fn [row]
-         (let [depth (/ (count (take-while #(= \space %) row)) 2)]
-           [depth (trim row)]))
-       rows))
-
 (defn- data-string->data [data-string]
   (let [[sym name active] (split data-string #";")]
     {:symbol sym
      :name name
      :active active}))
 
-(defn- entries-to-tree
-  ([entries]
-   (entries-to-tree 1 entries))
-  ([depth entries]
-   (for [part (partition-between (fn [[_ [d _]]] (= depth d)) entries)
-         :let [[[depth data-string] & more] part
-               data (data-string->data data-string)
-               subtree (entries-to-tree (inc depth) more)]]
-     (if (seq subtree)
-       (conj [data] (vec subtree))
-       [data []]))))
-
 (defn- skill-rows->tree [skill-rows]
   (->> skill-rows
-       to-level-entries
-       entries-to-tree
+       (map data-string->data)
        vec))
 
 (defn- into-tree [[name & skill-rows]]

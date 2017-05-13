@@ -64,10 +64,9 @@ body {
   color: var(--category-text-color);
 }
 
-.sibling-skills {
+.skills {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  font-size: 16px;
 }
 
 .skill {
@@ -76,22 +75,30 @@ body {
   align-items: center;
 }
 
-.symbol-name-active {
+.column {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 0 10px 10px 0;
+  flex-direction: column;
 }
 
-.active-text {
-  font-size: 12px;
+.skill-names, .actives {
+  flex-grow: 4;
 }
 
-.symbol, .skill-name, .active-text {
-  margin-right: 3px;
+.skill-name, .symbol, .active {
+  display: flex;
+  position: relative;
+  flex-grow: 3;
+  align-items: center;
+/*  margin-right: 3px; */
+}
+
+.skill-name {
+  justify-content: flex-end;
 }
 
 .symbol {
+  flex-grow: 1;
+  justify-content: center;
   background-color: var(--main-dark-color);
   color: var(--active-symbol-text-color);
   border: solid 4px var(--main-dark-color);
@@ -101,6 +108,11 @@ body {
   line-height: 36px;
   padding: 3px;
   text-align: center;
+}
+
+.active {
+  font-size: 12px;
+  justify-content: flex-start;
 }
 
 .inactive .symbol {

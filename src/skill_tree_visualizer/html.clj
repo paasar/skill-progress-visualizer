@@ -10,23 +10,24 @@
            :rel "stylesheet"}]
    [:style (slurp "resources/skill-tree-viz.css")]])
 
-(defn- create-branch [skill-branch]
-  [:div.sibling-skills
-   (for [[{:keys [symbol name active]} child-branches] skill-branch]
-     [:div.skill (when-not active {:class "inactive"})
-      [:div.symbol-name-active
-       [:div.skill-name name]
-       [:div.symbol symbol]
-       [:div.active-text
-        (when active "ACHIEVED")
-        [:div active]]]
-      (create-branch child-branches)])])
+(defn- create-skill-columns [skill-tree]
+  (let [names (map :name skill-tree)
+        symbols (map :symbol skill-tree)
+        actives (map :active skill-tree)]
+    [:div.skills
+     [:div.column.skill-names
+      (map (fn [name] [:div.skill-name name]) names)]
+     [:div.column.symbols
+      (map (fn [symbol] [:div.symbol symbol]) symbols)]
+     [:div.column.actives
+      (map (fn [active] [:div.active
+                         (when active "ACHIEVED")
+                         [:div.active-text active]]) actives)]]))
 
 (defn- create-tree [{:keys [name skill-tree]}]
   [:div.tree
    [:div.category name]
-   [:div.skills
-     (create-branch skill-tree)]])
+   (create-skill-columns skill-tree)])
 
 (defn- create-trees [trees]
   [:div.trees

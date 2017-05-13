@@ -16,19 +16,19 @@ Character class
 Character description
 
 Section #1 name
-  First skill
-    Following skill
-    Sibling skill to Following skill
-  Sibling skill to First skill
+First skill
+Following skill
+Third skill
+...
 
 Section #2 name
-  ...
+...
 
 ...
 ```
 Where a skill row contains the following:
 
-    Symbol or Shorthand;Skill name;Activation date or something (if has value skill is shown as active)
+    Exp;Skill name;Activation date or something (if has value skill is shown as achieved)
 
 ## License
 
