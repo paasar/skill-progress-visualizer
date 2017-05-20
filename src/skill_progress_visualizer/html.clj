@@ -1,11 +1,11 @@
-(ns skill-tree-visualizer.html
+(ns skill-progress-visualizer.html
   (:require [hiccup.core :refer :all]))
 
 (defn- create-head [{name :name}]
   [:head
    [:meta {:charset "UTF-8"}]
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-   [:title (str "Skill tree of " name)]
+   [:title (str "Skill progress of " name)]
    [:link {:href "https://fonts.googleapis.com/css?family=Montserrat"
            :rel "stylesheet"}]
    [:style (slurp "resources/skill-tree-viz.css")]])

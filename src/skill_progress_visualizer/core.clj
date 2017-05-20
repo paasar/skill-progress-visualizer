@@ -1,7 +1,7 @@
-(ns skill-tree-visualizer.core
+(ns skill-progress-visualizer.core
   (:require [clojure.string :refer [lower-case split split-lines trim] :as s]
             [flatland.useful.seq :refer [partition-between]]
-            [skill-tree-visualizer.html :refer [render]])
+            [skill-progress-visualizer.html :refer [render]])
   (:gen-class))
 
 (defn- data-string->data [data-string]

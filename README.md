@@ -1,6 +1,6 @@
-# skill-tree-visualizer
+# skill-progress-visualizer
 
-A skill tree visualizer that turns a simple input file into HTML
+A skill progress visualizer that turns a simple input file into nice HTML
 
 ## Usage
 
