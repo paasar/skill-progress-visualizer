@@ -87,10 +87,8 @@ body {
 
 .skill-name, .symbol, .activation {
   display: flex;
-  position: relative;
   flex-grow: 3;
   align-items: center;
-/*  margin-right: 3px; */
 }
 
 .skill-name {
@@ -98,7 +96,6 @@ body {
 }
 
 .symbol {
-  flex-grow: 1;
   justify-content: center;
   color: var(--symbol-text-color);
   border: solid 4px var(--main-dark-color);
@@ -107,7 +104,6 @@ body {
   min-height: 36px;
   line-height: 36px;
   padding: 3px;
-  text-align: center;
 }
 
 .symbol.active {
@@ -117,6 +113,5 @@ body {
 
 .activation {
   font-size: 12px;
-  justify-content: flex-start;
 }
 
