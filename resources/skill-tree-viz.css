@@ -55,7 +55,12 @@ body {
   min-width: 200px;
 }
 
-.tree .category {
+.category-container {
+  display: flex;
+  justify-content: center;
+}
+
+.category {
   display: inline-block;
   font-size: 16px;
   text-transform: uppercase;
@@ -81,11 +86,11 @@ body {
   flex-direction: column;
 }
 
-.skill-names, .activations {
+.skill-names, .activations, .empty {
   flex-grow: 4;
 }
 
-.skill-name, .symbol, .activation {
+.skill-name, .symbol, .activation, .bar-container, .empty {
   display: flex;
   flex-grow: 3;
   align-items: center;
@@ -115,3 +120,12 @@ body {
   font-size: 12px;
 }
 
+.bar-container {
+  justify-content: center;
+}
+
+.bar {
+  min-height: 36px;
+  border: solid 2px;
+  box-sizing: border-box;
+}
