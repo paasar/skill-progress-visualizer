@@ -9,8 +9,8 @@
   --category-bg-color: var(--white);
   --category-text-color: rgb(182,182,182);
 
-  --symbol-text-color: var(--main-dark-color);
-  --active-symbol-text-color: var(--white);
+  --exp-text-color: var(--main-dark-color);
+  --active-exp-text-color: var(--white);
 }
 
 body {
@@ -90,7 +90,7 @@ body {
   flex-grow: 4;
 }
 
-.skill-name, .symbol, .activation, .bar-container, .empty {
+.skill-name, .exp, .activation, .bar-container, .empty {
   display: flex;
   flex-grow: 3;
   align-items: center;
@@ -100,9 +100,9 @@ body {
   justify-content: flex-end;
 }
 
-.symbol {
+.exp {
   justify-content: center;
-  color: var(--symbol-text-color);
+  color: var(--exp-text-color);
   border: solid 4px var(--main-dark-color);
   border-radius: 50%;
   min-width: 36px;
@@ -111,9 +111,9 @@ body {
   padding: 3px;
 }
 
-.symbol.active {
+.exp.active {
   background-color: var(--main-dark-color);
-  color: var(--active-symbol-text-color);
+  color: var(--active-exp-text-color);
 }
 
 .activation {

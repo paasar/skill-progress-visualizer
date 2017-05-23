@@ -5,8 +5,8 @@
   (:gen-class))
 
 (defn- data-string->data [data-string]
-  (let [[sym name activation] (split data-string #";")]
-    {:symbol [sym activation]
+  (let [[exp name activation] (split data-string #";")]
+    {:exp [exp activation]
      :name [name activation]
      :activation activation}))
 
