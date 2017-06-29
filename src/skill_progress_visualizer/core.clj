@@ -10,25 +10,43 @@
      :name [name activation]
      :activation activation}))
 
-(defn- skill-rows->tree [skill-rows]
-  (->> skill-rows
-       (map data-string->data)
-       vec))
-
 (defn- into-tree [[name & skill-rows]]
   {:name name
-   :skill-tree (skill-rows->tree skill-rows)})
+   :skill-tree (mapv data-string->data skill-rows)})
 
 (defn- skill-rows->skill-trees [skill-rows]
   (->> (partition-by empty? skill-rows)
        (remove #(= [""] %))
        (mapv #(into-tree %))))
 
+(defn- gained-exp [skill-trees]
+  (->> skill-trees
+       (mapcat :skill-tree)
+       (map :exp)
+       (remove (comp nil? second))
+       (map (fn [[num _]]
+              (try
+                (Long/parseLong num)
+                (catch NumberFormatException _
+                  (println (str "Could not parse '" num "' as a number. Defaulting to zero."))
+                  0))))
+       (apply +)))
+
+(defn- level [exp]
+  (->> (iterate #(+ 10 %) 5)
+       (take-while #(< % exp))
+       count))
+
 (defn- lines->data [[name class description _ & skill-rows]]
-  {:name name
-   :description description
-   :class class
-   :skill-trees (skill-rows->skill-trees skill-rows)})
+  (let [skill-trees (skill-rows->skill-trees skill-rows)
+        current-exp (gained-exp skill-trees)
+        current-level (level current-exp)]
+    {:name name
+     :description description
+     :class class
+     :skill-trees skill-trees
+     :exp current-exp
+     :level current-level}))
 
 (defn- parse-input []
   (-> (slurp "input.data" :encoding "UTF-8")

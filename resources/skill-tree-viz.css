@@ -55,12 +55,12 @@ body {
   min-width: 200px;
 }
 
-.category-container {
+.category-container, .progress-container {
   display: flex;
   justify-content: center;
 }
 
-.category {
+.category, .progress {
   display: inline-block;
   font-size: 16px;
   text-transform: uppercase;
@@ -68,6 +68,10 @@ body {
   padding: 5px 10px;
   background-color: var(--category-bg-color);
   color: var(--category-text-color);
+}
+
+.total-exp {
+  font-size: 12px;
 }
 
 .skills {

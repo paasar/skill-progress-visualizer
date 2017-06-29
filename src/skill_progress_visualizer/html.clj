@@ -47,13 +47,17 @@
    (for [tree trees]
      (create-tree tree))])
 
-(defn- create-body [{:keys [name class description skill-trees]}]
+(defn- create-body [{:keys [name class description skill-trees exp level]}]
   [:body
    [:div.header
     [:div.name name]
     [:div.character-class class]
     [:div.description description]]
    [:div.content
+    [:div.progress-container
+     [:div.progress
+      [:div.level (str "level " level)]
+      [:div.total-exp (str "exp " exp)]]]
     (create-trees skill-trees)]])
 
 (defn render [data]
