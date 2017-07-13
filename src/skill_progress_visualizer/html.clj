@@ -32,7 +32,7 @@
       (divs-in-between [:div.empty]
         (map (fn [activation]
                [:div.activation
-                (when activation "ACHIEVED")
+                (when activation [:div "ACHIEVED"])
                 [:div.activation-text activation]])
              activations))]]))
 
