@@ -26,7 +26,10 @@
      [:div.column.exp-points
       (divs-in-between [:div.bar-container [:div.bar]]
         (map (fn [[exp active]]
-               [:div.exp {:class (when active "active")} exp])
+               [:div.exp {:class (when active "active")}
+                [:div.icon-background
+                 [:div.achieved-icon {:class (if active "icon-check" "icon-lock")}]]
+                exp])
              exp-points))]
      [:div.column.activations
       (divs-in-between [:div.empty]
