@@ -35,8 +35,8 @@
       (divs-in-between [:div.empty]
         (map (fn [activation]
                [:div.activation
-                (when activation [:div "ACHIEVED"])
-                [:div.activation-text activation]])
+                [:div (if activation "ACHIEVED" "&nbsp;")]
+                [:div.activation-text (if activation activation "&nbsp;")]])
              activations))]]))
 
 (defn- create-tree [{:keys [name skill-tree]}]
