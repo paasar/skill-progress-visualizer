@@ -52,7 +52,7 @@
 
 (defn- create-body [{:keys [name class description skill-trees exp level]}]
   [:body
-   [:div.header
+   [:div.header.clouds
     [:div.name name]
     [:div.character-class class]
     [:div.description description]]
