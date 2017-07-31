@@ -2,6 +2,8 @@
 
 A skill progress visualizer that turns a simple input file into nice HTML
 
+![skill_generator_cthulhu](https://user-images.githubusercontent.com/1344167/28764546-a9697c16-75ce-11e7-9e42-2913dffc7688.png)
+
 ## Usage
 
     lein run

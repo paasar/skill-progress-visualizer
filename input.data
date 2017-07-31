@@ -3,14 +3,14 @@ God
 Eternal
 
 Social
-DI;Drive Insane
+5;Drive Insane
 
 Motoric
-F;Float;27.4.2017
-T;Teleport
-C;Crawl
+1;Crawl;10.4.2017
+2;Float;27.4.2017
+4;Teleport
 
 Language
-S;Swear;14.4.2017
-C;Curse;15.4.2017
-CF;Cthulhu Fhtang
+1;Swear;14.4.2017
+2;Curse;15.4.2017
+5;Cthulhu Fhtang
