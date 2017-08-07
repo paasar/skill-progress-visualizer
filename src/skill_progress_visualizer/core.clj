@@ -1,6 +1,5 @@
 (ns skill-progress-visualizer.core
   (:require [clojure.string :refer [lower-case split split-lines trim] :as s]
-            [flatland.useful.seq :refer [partition-between]]
             [skill-progress-visualizer.html :refer [render]])
   (:gen-class))
 
