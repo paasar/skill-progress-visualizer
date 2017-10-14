@@ -32,7 +32,7 @@
        (apply +)))
 
 (defn- level [exp]
-  (->> (iterate #(+ 10 %) 5)
+  (->> (iterate #(+ 20 %) 10)
        (take-while #(< % exp))
        count))
 
